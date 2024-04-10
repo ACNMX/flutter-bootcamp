@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import logo from "../images/bootcamp-logo.svg";
 import beginner from "../images/teacher.png";
+import pdfImage from "../images/pdf.png";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Welcome to Flutter Bootcamp">
@@ -12,48 +14,81 @@ import beginner from "../images/teacher.png";
     </div>
     <div class="flex flex-col items-center content-center m-2 prose slim">
       <h2 class="font-light text-2xl mt-32">Welcome!</h2>
-      <p class="mx-1 mb-16 p-8  text-3xl font-thin text-center">
+      <p class="mx-1 mb-16 p-8 text-3xl font-thin text-center">
         The Flutter Bootcamp: a free course that will teach you how to build mobile applications using Flutter and more.
       </p>
+      <div class="flex flex-col content-center items-center my-8">
+        <img src={pdfImage.src} alt="sd" width={60} />
+        <a href="/flutter-bootcamp/public/FlutterBootcamp-Draft.pdf">See the Full Draft in PDF</a>
+      </div>
     </div>
-    <div class="mx-24 my-2 flex flex-col prose max-width with-bg p-12 rounded-xl">
-      <Card title="Get Started" href="/flutter-bootcamp/beginner/start-topic" body="Learn how to use this bootcamp">
-      </Card>
-
-      <!-- App Challenges -->
-      <section class="my-12">
-        <h1 class="mx-2 font-light ">Learn by completing app challanges</h1>
-        <ul class="flex p-0">
-          <Card title="Beginner" href="/flutter-bootcamp/beginner/start-topic" body="Learn the basics of Flutter and Dart" image={beginner}>
-          </Card>
-          <Card title="Itermediate" href="/flutter-bootcamp/beginner/start-topic" body="Create intermediate UI's and code with Flutter" image={beginner}>
-          </Card>
-          <Card title="Advanced" href="/flutter-bootcamp/beginner/start-topic" body="Deep dive in Flutter's advanced features" image={beginner}>
-          </Card>
-        </ul>
-      </section>
-
-      <!-- More -->
-      <section class="mb-12">
-        <h1 class="mx-2 font-light ">Hungry for more?</h1>
-        <ul class="flex p-0">
-          <Card title="Dart Language" href="/flutter-bootcamp/beginner/start-topic" body="A comparison for developers">
-          </Card>
-          <Card title="Architectural and Design Patterns" href="/flutter-bootcamp/beginner/start-topic" body="A comparison for developers">
-          </Card>
-          <Card title="Server Side Dart" href="/flutter-bootcamp/beginner/start-topic" body="Create backend code with Dart">
-          </Card>
-          <Card title="Flutter 3D" href="/flutter-bootcamp/beginner/start-topic" body="Shaders and 3D models in Flutter">
-          </Card>
-        </ul>
-        <ul class="flex p-0">
-          <Card title="GenAI Intergration" href="/flutter-bootcamp/beginner/start-topic" body="A comparison for developers">
-          </Card>
-          <Card title="Certifications, Conferences, Courses" href="/flutter-bootcamp/beginner/start-topic" body="A comparison for developers">
-          </Card>
-        </ul>
-      </section>
+  </div>
+  <div class="mx-24 my-8 flex flex-col prose max-width with-bg p-12 rounded-xl">
+    <div>
+      <div class="coming-soon">Site Content Coming Soon</div>
     </div>
+
+    <Card title="Get Started" href="/flutter-bootcamp/beginner/start-topic" body="Learn how to use this bootcamp" />
+
+    <!-- App Challenges -->
+    <section class="my-12">
+      <h1 class="mx-2 font-light">Learn by completing app challanges</h1>
+      <ul class="flex p-0">
+        <Card
+          title="Beginner"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="Learn the basics of Flutter and Dart"
+          image={beginner}
+        />
+        <Card
+          title="Itermediate"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="Create intermediate UI's and code with Flutter"
+          image={beginner}
+        />
+        <Card
+          title="Advanced"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="Deep dive in Flutter's advanced features"
+          image={beginner}
+        />
+      </ul>
+    </section>
+
+    <!-- More -->
+    <section class="mb-12">
+      <h1 class="mx-2 font-light">Hungry for more?</h1>
+      <ul class="flex p-0">
+        <Card title="Dart Language" href="/flutter-bootcamp/beginner/start-topic" body="A comparison for developers" />
+        <Card
+          title="Architectural and Design Patterns"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="A comparison for developers"
+        />
+        <Card
+          title="Server Side Dart"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="Create backend code with Dart"
+        />
+        <Card
+          title="Flutter 3D"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="Shaders and 3D models in Flutter"
+        />
+      </ul>
+      <ul class="flex p-0">
+        <Card
+          title="GenAI Intergration"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="A comparison for developers"
+        />
+        <Card
+          title="Certifications, Conferences, Courses"
+          href="/flutter-bootcamp/beginner/start-topic"
+          body="A comparison for developers"
+        />
+      </ul>
+    </section>
   </div>
 </Layout>
 
@@ -69,10 +104,22 @@ import beginner from "../images/teacher.png";
   }
 
   .with-bg {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .coming-soon {
+    background-color: #d2404c;
+    display: inline-flex;
+    font-size: 0.7em;
+    font-weight: 400;
+    color: #fff;
+    padding: 0.2rem 0.7rem;
+    border-radius: 5rem;
+    margin-bottom: 1rem;
+    text-align: center;
   }
 
   div.card {
-    background-color: #E8F3F8;
+    background-color: #e8f3f8;
   }
 </style>
